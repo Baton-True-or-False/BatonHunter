@@ -6,8 +6,8 @@
 
 .questionitem {
   border: 1px solid blue;
-  height: 500px;
-  margin-bottom: 20px;
+  height: 450px;
+  margin-bottom: 75px;
   position: relative;
 }
 .questionitem img{
@@ -19,7 +19,7 @@
 }
 .trueitem, .falseitem {
   border: 1px solid black;
-  height: 200px;
+  height: 150px;
   text-align: center;
   vertical-align: center;
 }
