@@ -25,8 +25,23 @@
         title: "problem 5",
         content: "the answer is true !!Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium, nihil!\n",
         answer: true
+      },{
+        pid: 6,
+        title: "problem 6",
+        content: "the answer is false !!Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium, nihil!\n",
+        answer: false
       }];
     var ans;
+    $(function(){
+      PopAProblem();
+    });
+    function PopAProblem(){
+        $('#answer .btn').attr("disabled", false);
+        var problem = problems.pop();
+        ans = problem.answer;
+        $('#problem .title').text(problem.title);
+        $('#problem .content').text(problem.content);
+    }
 
     function checkAnswer(problemAns, userAns){
       $('#answer .btn').attr("disabled", true);
@@ -36,9 +51,7 @@
         return "false";
       }        
     }
-    
-    function gameLogic(result){      
-    }
+
     function displayResult(result){
       if(result == 'true'){
         $('.true-signal').show();
@@ -54,17 +67,8 @@
         $('.true-signal').hide();
       },1000);
     }
-    $(function(){
-      PopAProblem();
-    });
+
     function ansClick(value){
       var result = checkAnswer(ans, value);
       displayResult(result);
-    }
-    function PopAProblem(){
-        $('#answer .btn').attr("disabled", false);
-        var problem = problems.pop();
-        ans = problem.answer;
-        $('#problem .title').text(problem.title);
-        $('#problem .content').text(problem.content);
     }
